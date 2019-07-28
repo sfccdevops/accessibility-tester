@@ -1,0 +1,46 @@
+{
+  "name": "rvw-accessibility-tester",
+  "version": "1.0.0",
+  "description": "Automated Accessibility Tester for Client Websites",
+  "homepage": "https://github.com/redvanworkshop/accessibility-tester#readme",
+  "license": "MIT",
+  "main": "./bin/cli.js",
+  "bin": {
+    "a11y": "./bin/cli.js"
+  },
+  "keywords": [
+    "accessibility",
+    "analysis",
+    "report"
+  ],
+  "contributors": [
+    {
+      "name": "Peter Schmalfeldt",
+      "email": "peter@redvanworkshop.com",
+      "url": "redvanworkshop.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/redvanworkshop/accessibility-tester.git"
+  },
+  "bugs": {
+    "url": "https://github.com/redvanworkshop/accessibility-tester/issues"
+  },
+  "scripts": {
+    "test": "eslint --ext .js ./ && echo '\n【ツ】CODE PERFECTION !!!\n'"
+  },
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "hogan.js": "^3.0.2",
+    "moment": "^2.24.0",
+    "ora": "^3.4.0",
+    "pa11y": "^5.2.0",
+    "yargs": "^13.3.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.2",
+    "eslint": "^6.1.0",
+    "eslint-plugin-import": "^2.18.2"
+  }
+}
