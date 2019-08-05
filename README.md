@@ -15,7 +15,7 @@ A CLI tool that tests client websites for Accessibility Issues and generates rep
 - [X] Support for Continuos Integration Testing
 - [X] Save Reports in CSV, HTML, JSON, Markdown & XML Formats
 - [X] Supports Page Automation using Actions
-- [X] Supports Testing Websites behind HTTP Authenticaiton
+- [X] Supports Testing Websites behind HTTP Authentication
 - [X] Reports provide Resource Links for Developers to Learn More about Accessibility
 
 
