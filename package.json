@@ -6,12 +6,24 @@
   "license": "MIT",
   "main": "./bin/cli.js",
   "bin": {
-    "a11y": "./bin/cli.js"
+    "rvw-a11y": "./bin/cli.js"
   },
   "keywords": [
+    "a11y",
     "accessibility",
-    "analysis",
-    "report"
+    "cli",
+    "csv",
+    "html",
+    "json",
+    "markdown",
+    "report",
+    "screen capture",
+    "screenshot",
+    "Section508",
+    "WCAG2A",
+    "WCAG2AA",
+    "WCAG2AAA",
+    "xml"
   ],
   "contributors": [
     {
@@ -31,11 +43,14 @@
     "test": "eslint --ext .js ./ && echo '\n【ツ】CODE PERFECTION !!!\n'"
   },
   "dependencies": {
+    "bluebird": "^3.5.5",
     "chalk": "^2.4.2",
-    "hogan.js": "^3.0.2",
+    "handlebars": "^4.1.2",
     "moment": "^2.24.0",
+    "open": "^6.4.0",
     "ora": "^3.4.0",
     "pa11y": "^5.2.0",
+    "prompt": "^1.0.0",
     "yargs": "^13.3.0"
   },
   "devDependencies": {

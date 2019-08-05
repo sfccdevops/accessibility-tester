@@ -1,112 +1,520 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
+    <meta charset="utf-8" />
+    <title>Accessibility Report</title>
 
-	<meta charset="utf-8"/>
-	<title>Accessibility Report For "{{pageUrl}}" ({{date}})</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="content-language" content="en">
+    <meta http-equiv="imagetoolbar" content="no">
 
-	<style>
+    <meta name="author" content="Red Van Workshop">
+    <meta name="cache-control" content="public">
+    <meta name="company" content="Red Van Workshop">
+    <meta name="content-language" content="en">
+    <meta name="description" content="Automated Accessibility Tester">
+    <meta name="googlebot" content="noindex,nofollow">
+    <meta name="language" content="en">
+    <meta name="robots" content="noodp,noydir">
+    <meta name="robots" content="noindex,nofollow">
 
-		html, body {
-			margin: 0;
-			padding: 0;
-			background-color: #fff;
-			font-family: Arial, Helvetica, sans-serif;
-			font-size: 16px;
-			line-height: 22px;
-			color: #333;
-		}
-		li {
-			margin-bottom: 15px;
-		}
-		h1, h2, p, pre, ul {
-			margin-top: 0;
-			margin-bottom: 0;
-		}
-		h1 {
-			margin-bottom: 10px;
-			font-size: 24px;
-			line-height: 24px;
-		}
-		h2 {
-			font-size: 16px;
-		}
-		pre {
-			white-space: pre-wrap;
-			overflow: auto;
-		}
+    <!-- Twitter META Info -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:site" content="@redvanworkshop">
+    <meta property="twitter:title" content="Accessibility Report">
+    <meta property="twitter:description" content="Accessibility Report For">
+    <meta property="twitter:creator" content="@redvanworkshop">
+    <meta property="twitter:image:src" content="https://repository-images.githubusercontent.com/197870515/321f6e80-aa7f-11e9-9f2e-e272bb2e8658">
+    <meta property="twitter:domain" content="redvanworkshop.com">
 
-		.page {
-			max-width: 800px;
-			margin: 0 auto;
-			padding: 25px;
-		}
+    <!-- Mobile Specific Meta Tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-		.counts {
-			margin-top: 30px;
-			font-size: 20px;
-		}
-		.count {
-			display: inline-block;
-			padding: 5px;
-			border-radius: 5px;
-			border: 1px solid #eee;
-		}
+    <!-- Open Graph protocol -->
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Accessibility Report">
+    <meta property="og:url" content="https://peterschmalfeldt.com/">
+    <meta property="og:image" content="https://repository-images.githubusercontent.com/197870515/321f6e80-aa7f-11e9-9f2e-e272bb2e8658">
+    <meta property="og:site_name" content="Red Van Workshop">
+    <meta property="og:description" content="Automated Accessibility Tester">
 
-		.clean-list {
-			margin-left: 0;
-			padding-left: 0;
-			list-style: none;
-		}
-		.results-list {
-			margin-top: 30px;
-		}
+    <!-- Dublin Core Metadata -->
+    <meta name="dc:language" content="en_US">
+    <meta name="dc:title" content="Accessibility Report">
+    <meta name="dc:source" content="https://peterschmalfeldt.com/">
+    <meta name="dc:description" content="Automated Accessibility Tester">
 
-		.result {
-			padding: 10px;
-			border-radius: 5px;
-			border: 1px solid #eee;
-		}
-		.error {
-			background-color: #fdd;
-			border-color: #ff9696;
-		}
-		.warning {
-			background-color: #ffd;
-			border-color: #e7c12b;
-		}
-		.notice {
-			background-color: #eef4ff;
-			border-color: #b6d0ff;
-		}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/default.min.css">
+    <style>
+      /* Design */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
 
-	</style>
+      html, body {
+        padding: 0;
+        margin: 0;
+      }
 
-</head>
-<body>
+      body {
+        color: #272727;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        font-style: normal;
+        font-weight: 400;
+        letter-spacing: 0;
+        background-color: #FFF;
+      }
 
-	<div class="page">
+      .main {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 1rem;
+      }
 
-		<h1>Accessibility Report For "{{pageUrl}}"</h1>
-		<p>Generated at: {{date}}</p>
+      h1 {
+        font-size: 24px;
+        font-weight: 600;
+        text-align: left;
+        margin-top: 0;
+      }
 
-		<p class="counts">
-			<span class="count error">{{errorCount}} errors</span>
-			<span class="count warning">{{warningCount}} warnings</span>
-			<span class="count notice">{{noticeCount}} notices</span>
-		</p>
+      h2 {
+        font-size: 24px;
+        font-weight: 400;
+        margin-bottom: 0;
+      }
 
-		<ul class="clean-list results-list">
-			{{#issues}}
-			<li class="result {{type}}">
-				<h2>{{typeLabel}}: {{message}}</h2>
-				<p>{{code}}</p>
-				<pre>{{context}} (select with "{{selector}}")</pre>
-			</li>
-			{{/issues}}
-		</ul>
+      h3, h4 {
+        font-size: .85rem;
+        font-weight: 400;
+        margin: 0;
+        padding: 0;
+        line-height: 1.25rem;
+      }
 
-	</div>
+      h3.recommendation {
+        font-size: 1rem;
+        margin-top: 20px;
+      }
 
-</body>
+      h3.recommendation strong {
+        color: limegreen;
+      }
+
+      img {
+        height: auto;
+        max-width: 100%;
+        vertical-align: middle;
+      }
+
+      .btn {
+        color: #ffffff;
+        padding: 0.8rem;
+        font-size: 14px;
+        text-transform: uppercase;
+        border-radius: 4px;
+        font-weight: 400;
+        display: block;
+        width: 100%;
+        cursor: pointer;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        background: transparent;
+      }
+
+      .btn:hover {
+        background-color: rgba(255, 255, 255, 0.12);
+      }
+
+      .cards {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        justify-content: space-between;
+      }
+
+      .cards_item {
+        display: flex;
+        margin-bottom: 1.25rem;
+        width: 49%;
+      }
+
+      .card {
+        background-color: white;
+        border-radius: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        border: 2px solid #999;
+        width: 100%;
+      }
+
+      .cards_item.notice .card {
+        border: 2px solid cornflowerblue;
+      }
+
+      .cards_item.warning .card {
+        border: 2px solid #ff9800;
+      }
+
+      .cards_item.error .card {
+        border: 2px solid crimson;
+      }
+
+      .cards_item.hidden {
+        display: none;
+      }
+
+      .card_content {
+        padding: 2rem;
+        height: 100%;
+      }
+
+      .card_title {
+        color: #222;
+        font-size: 1.1rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-transform: capitalize;
+        margin: 0;
+      }
+
+      .cards_item.notice .card_title {
+        color: cornflowerblue;
+      }
+
+      .cards_item.warning .card_title {
+        color: #ff9800;
+      }
+
+      .cards_item.error .card_title {
+        color: crimson;
+      }
+
+      .card_title span {
+        font-weight: 400;
+        color: #222;
+      }
+
+      .card_text {
+        color: #222;
+        font-size: 0.75rem;
+        line-height: 1.5;
+        margin-bottom: 0;
+        font-weight: 400;
+        word-break: break-word;
+      }
+
+      .made_by {
+        font-weight: 400;
+        font-size: 13px;
+        margin-top: 35px;
+        text-align: center;
+        padding-bottom: 20px;
+        border-top: 1px solid rgba(0,0,0,0.1);
+        padding-top: 20px;
+      }
+
+      .made_by a {
+        color: cornflowerblue;
+        text-decoration: none;
+        font-weight: 400;
+      }
+
+      .hljs {
+        background: transparent;
+        white-space: normal;
+        line-height: 1.25rem;
+        padding: 0;
+        color: rgba(0,0,0,0.75);
+      }
+
+      .report-header {
+        border-top: 1px solid rgba(0,0,0,0.1);
+        margin-top: 30px;
+        padding-top: 10px;
+      }
+
+      .totals, .button-wrapper {
+        white-space: nowrap
+      }
+
+      small {
+        font-weight: 500;
+        font-size: 0.75rem;
+        line-height: 1.5rem;
+        color: rgba(0, 0, 0, 0.35);
+        margin-top: 1rem;
+        display: block;
+      }
+
+      pre, code {
+        padding: 0;
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        font-size: 0.75rem;
+      }
+
+      button {
+        -webkit-appearance: none;
+        padding: 8px 16px 8px 12px;
+        font-size: 1rem;
+        border: none;
+        color: #FFF;
+        background: #666;
+        transition: all 0.25s;
+        cursor: pointer;
+      }
+
+      button small {
+        display: initial;
+        color: white;
+        font-weight: normal;
+        opacity: 0.5;
+      }
+
+      button.button-error {
+        background: crimson;
+      }
+
+      button.button-warning {
+        background: #ff9800;
+      }
+
+      button.button-notice {
+        background: cornflowerblue;
+      }
+
+      button.disabled {
+        opacity: 0.5;
+        background: #666;
+      }
+
+      button.small {
+        padding: 2px 10px 2px 6px;
+        font-size: 0.75rem;
+      }
+
+      button.small small {
+        font-size: 0.75rem;
+      }
+
+      a.resource {
+        color: black;
+        text-decoration: none;
+        font-size: 0.85rem;
+      }
+
+      a.resource::after {
+        content: ', '
+      }
+
+      a.resource:last-child:after {
+        content: ''
+      }
+
+      .screenshot {
+        width: 200px;
+        height: 125px;
+      }
+
+      .screenshot a {
+        display: block;
+        width: 200px;
+        height: 125px;
+        background: center center no-repeat;
+        background-size: cover;
+        box-shadow: 0 0 4px rgba(0,0,0,0.25);
+      }
+
+      .cards_item.notice a.resource:hover, .cards_item.notice a.resource:focus, .cards_item.notice a.resource:active {
+        color: cornflowerblue;
+      }
+
+      .cards_item.warning a.resource:hover, .cards_item.warning a.resource:focus, .cards_item.warning a.resource:active {
+        color: #ff9800;
+      }
+
+      .cards_item.error a.resource:hover, .cards_item.error a.resource:focus, .cards_item.error a.resource:active {
+        color: crimson;
+      }
+
+      .hljs-name {
+        font-weight: 700;
+      }
+
+      .cards_item.notice .hljs-type,
+      .cards_item.notice .hljs-string,
+      .cards_item.notice .hljs-number,
+      .cards_item.notice .hljs-selector-id,
+      .cards_item.notice .hljs-selector-class,
+      .cards_item.notice .hljs-quote,
+      .cards_item.notice .hljs-template-tag,
+      .cards_item.notice .hljs-deletion {
+        color: cornflowerblue;
+      }
+
+      .hljs-regexp,
+      .hljs-symbol,
+      .hljs-variable,
+      .hljs-template-variable,
+      .hljs-link,
+      .hljs-selector-attr,
+      .hljs-selector-pseudo {
+        color: rgba(0,0,0,0.5);
+      }
+
+      .cards_item.warning .hljs-string,
+      .cards_item.warning .hljs-type,
+      .cards_item.warning .hljs-string,
+      .cards_item.warning .hljs-number,
+      .cards_item.warning .hljs-selector-id,
+      .cards_item.warning .hljs-selector-class,
+      .cards_item.warning .hljs-quote,
+      .cards_item.warning .hljs-template-tag,
+      .cards_item.warning .hljs-deletion {
+        color: #ff9800;
+      }
+
+      .cards_item.error .hljs-type,
+      .cards_item.error .hljs-string,
+      .cards_item.error .hljs-number,
+      .cards_item.error .hljs-selector-id,
+      .cards_item.error .hljs-selector-class,
+      .cards_item.error .hljs-quote,
+      .cards_item.error .hljs-template-tag,
+      .cards_item.error .hljs-deletion {
+        color: crimson;
+      }
+
+      @media (max-width: 320px) {
+        button {
+          padding: 2px 10px 2px 6px;
+          font-size: 0.65rem;
+        }
+
+        button small {
+          font-size: 0.65rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .cards_item {
+          width: 100%;
+        }
+
+        .totals {
+          font-size: 0.8rem;
+        }
+
+        button {
+          padding: 2px 10px 2px 6px;
+          font-size: 0.75rem;
+        }
+
+        button small {
+          font-size: 0.75rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="main">
+      <h1>A11Y Report Summary</h1>
+
+      <h3><strong>Date:</strong> {{generated.date}}</h3>
+      <h4><strong>Total Issues:</strong> {{total.all}}</h4>
+
+      <p class="totals">
+      {{#if total.error}}✖&nbsp; Errors: {{total.error}} &nbsp;{{/if}}
+      {{#if total.warning}}▲&nbsp; Warnings: {{total.warning}} &nbsp;{{/if}}
+      {{#if total.notice}}◆&nbsp; Notices: {{total.notice}}{{/if}}
+      </p>
+
+      {{#results}}
+
+      <div class="report-header">
+          <h2>⚑ {{documentTitle}}</h2>
+          <p>
+            <small>
+              <strong>URL:</strong> {{pageUrl}}<br />
+              <strong>Total Issues:</strong> {{total.all}}
+            </small>
+          </p>
+      </div>
+
+      {{#if screenCapture}}
+      <div class="screenshot">
+        <a href="{{screenCapture}}" target="_blank" style="background-image: url('{{screenCapture}}')"></a>
+      </div>
+      {{/if}}
+
+      <p class="button-wrapper">
+      {{#if total.error}}<button class="button-error small disabled" title="Toggle Errors" onclick="toggleReportIssues('report{{@index}}', 'error'); this.classList.toggle('disabled'); return false;">✖&nbsp; Errors <small>({{total.error}})</small></button>{{/if}}
+      {{#if total.warning}}<button class="button-warning small disabled" title="Toggle Warnings" onclick="toggleReportIssues('report{{@index}}', 'warning'); this.classList.toggle('disabled'); return false;">▲&nbsp; Warnings <small>({{total.warning}})</small></button>{{/if}}
+      {{#if total.notice}}<button class="button-notice small disabled" title="Toggle Notices" onclick="toggleReportIssues('report{{@index}}', 'notice'); this.classList.toggle('disabled'); return false;">◆&nbsp; Notices <small>({{total.notice}})</small></button>{{/if}}
+      </p>
+
+      <ul class="cards" id="report{{@index}}">
+        {{#issues}}
+        <li class="cards_item {{type}} hidden">
+          <div class="card">
+            <div class="card_content">
+              <h2 class="card_title">{{type}}: <span>{{message}}</span></h2>
+              <p class="card_text" title="A11Y Violation Code">{{code}}</p>
+
+              {{#if recommendation}}
+              <h3 class="recommendation" title="Recommended Solution for this Issue"><strong>Fix: </strong>{{recommendation}}</h3>
+              {{/if}}
+
+              {{#if context}}
+              <small title="Code Context for Reported Issue">Context:</small>
+              <pre><code class="html">{{context}}</code></pre>
+              {{/if}}
+
+              {{#if selector}}
+              <small title="CSS Selector that Targets this issue">Selector:</small>
+              <pre><code class="css">{{selector}}</code></pre>
+              {{/if}}
+
+              {{#if resources}}
+              <small title="Additional Reference Resources about this Specific Issue">Resources:</small>
+              <div class="resources">
+                {{#resources}}
+                <a href="{{url}}" class="resource" title="Learn more about {{label}} Requirements">{{label}}</a>
+                {{/resources}}
+              </div>
+              {{/if}}
+            </div>
+          </div>
+        </li>
+        {{/issues}}
+      </ul>
+      {{/results}}
+    </div>
+
+    <h3 class="made_by">Generated by: <a href="{{generated.url}}" target="_blank">{{generated.label}}</a></h3>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+    <script>
+    function toggleReportIssues(elm, type) {
+      document.getElementById(elm).querySelectorAll('li.' + type).forEach((el) => {
+        el.classList.toggle('hidden')
+      })
+    }
+
+    document.addEventListener('DOMContentLoaded', (event) => {
+      document.querySelectorAll('pre code').forEach((block) => {
+        hljs.highlightBlock(block);
+      })
+    })
+    </script>
+  </body>
 </html>

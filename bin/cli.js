@@ -4,19 +4,19 @@ const path = require('path')
 const yargs = require('yargs')
 
 const argv = yargs
-  .usage('\nAutomated Accessibility Tester\n\nUsage: a11y --options')
+  .usage('\nAutomated Accessibility Tester\n\nUsage: rvw-a11y --options')
   .options({
+    actions: {
+      alias: 'a',
+      describe: 'Test Actions',
+      type: 'array',
+      default: []
+    },
     config: {
       alias: 'c',
       describe: 'Path to Configuration File',
       type: 'string',
       default: null
-    },
-    debug: {
-      alias: 'd',
-      describe: 'Output Debug Messages',
-      type: 'boolean',
-      default: false
     },
     format: {
       alias: 'f',
@@ -35,6 +35,12 @@ const argv = yargs
       describe: 'Include Notices in Report',
       type: 'boolean',
       default: true
+    },
+    open: {
+      alias: 'O',
+      describe: 'Open Report after Creation',
+      type: 'boolean',
+      default: false
     },
     output: {
       alias: 'o',
@@ -73,18 +79,24 @@ const argv = yargs
       default: true
     }
   })
+  .command('*', 'Run A11Y Tests using Options')
+  .command('auth', 'Generate Authentication Token')
   .example('a11y -c /path/to/config.json', 'Run Test using Provided Config')
-  .example('a11y https://mywebsite.com', 'Run Test on URL')
+  .example('a11y https://mywebsite.com --open', 'Run Test on URL')
   .example(' ', ' ')
   .example('----------------------------------', '------------------------------------------')
-  .example('NEED MORE HELP ?', 'https://bit.ly/sfcc-cli-help')
+  .example('NEED MORE HELP ?', 'https://bit.ly/rvw-a11y-help')
   .example('----------------------------------', '------------------------------------------')
   .help()
   .version().argv
 
+const command = argv._[0]
+
 // Check if we passed in either a URL or a config file
 if (argv._.length === 0 && !argv.config) {
   yargs.showHelp()
+} else if (command === 'auth') {
+  require(path.join(__dirname, '../commands/auth.js'))(argv)
 } else {
   require(path.join(__dirname, '../commands/a11y.js'))(argv)
 }
