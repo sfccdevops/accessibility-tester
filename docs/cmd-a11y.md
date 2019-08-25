@@ -17,7 +17,7 @@ Name           | JSON Param      | CLI Param & Alias        | Default   | Defini
 ---------------|-----------------|--------------------------|-----------|----------------------------------------------
 Actions        | `actions`       | `--actions`, `-a`        | `[]`      | Test Actions ( [Learn More](actions.md) )
 Config         |                 | `--config`, `-c`         |           | Absolute Path to Configuration File
-Format         | `format`        | `--format`, `-f`         | `cli`     | Output Format of Report [ `cli`, `csv`, `html`, `json`, `md`, `xml` ]
+Format         | `format`        | `--format`, `-f`         | `cli`     | Output Format of Report [ `cli`, `csv`, `html`, `jira`, `json`, `md`, `xml` ]
 Ignore         | `ignore`        | `--ignore`, `-i`         |  `[]`     | Error Codes to Ignore ( `WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail` )
 Notices        | `notices`       | `--notices`, `-n`        | `true`    | Include Notices in Report ( `--notices=false` or `--no-notices` to disable )
 Open           | `open`          | `--open`, `-O`           | `false`   | Open Report after Creation

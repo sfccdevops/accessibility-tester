@@ -9,6 +9,15 @@ Troubleshooting
 
 <img src="https://octodex.github.com/images/dinotocat.png" width="400" />
 
+`How do I use the Jira Report?`
+---
+
+1. The `format` of `jira` will generate a `.txt` report.
+2. Make sure you are not using the New View, as it does not currently support Text Based Formatting.  If you are using the New View, click the "See the old view" at the top of the Jira Ticket to use the version of Jira that will allow you to paste in formatted text, as well as preview that text.
+3. Upload any Screen Captures generated as attachments to the ticket before pasting in the formatted text.
+4. Copy the contents from the `.txt` file for use as a comment on an existing ticket, or as the description of a new one.
+5. All Done :)
+
 `✖ Test Error: Pa11y timed out (30000ms)`
 ---
 

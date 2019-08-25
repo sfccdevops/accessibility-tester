@@ -159,7 +159,7 @@ module.exports = async options => {
         }
 
         if (opts.screenCapture) {
-          const timestamp = moment().format('YYYYMMDD_HHmmss')
+          const timestamp = moment().format('YYYYMMDD_HHmmssSSSS')
           opts.screenCapture = path.join(opts.output, `screenshot_${website.host}_${timestamp}.jpg`)
         }
 
@@ -203,14 +203,14 @@ module.exports = async options => {
             } else {
               handleException('Report Error:', 'An Unknown Error Occurred')
             }
-          }).catch(err => handleException('Report Error:', err.message))
-        }).catch(err => handleException('Format Error:', err.message))
-      }).catch(err => handleException('A11Y Error:', err.message))
+          }).catch(err => handleException('Report Error:', err.message ? err.message : err))
+        }).catch(err => handleException('Format Error:', err.message ? err.message : err))
+      }).catch(err => handleException('A11Y Error:', err.message ? err.message : err))
 
     } else {
       handleException('Config Error', 'No URL\'s Were Configured for Testing')
     }
   } catch(err) {
-    handleException('A11Y Error', err.message)
+    handleException('A11Y Error', err.message ? err.message : err)
   }
 }

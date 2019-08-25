@@ -13,7 +13,7 @@ Introduction
 A CLI tool that tests client websites for Accessibility Issues and generates reports that can be assigned to Developers.
 
 - [X] Support for Continuos Integration Testing
-- [X] Save Reports in CSV, HTML, JSON, Markdown & XML Formats
+- [X] Save Reports in CSV, HTML, Jira, JSON, Markdown & XML Formats
 - [X] Supports Page Automation using Actions
 - [X] Supports Testing Websites behind HTTP Authentication
 - [X] Reports provide Resource Links for Developers to Learn More about Accessibility
@@ -71,6 +71,7 @@ Since this is a CLI tool, the default output is in a terminal window.
 
 * [sample-report.csv](https://gist.github.com/manifestinteractive/fab5fc8cceac093cbe9fb5a5c2ad1b96)
 * [sample-report.html](https://rvw-a11y.s3.amazonaws.com/sample-report/a11y_20190804_221047.html)
+* [sample-report.jira](https://gist.github.com/manifestinteractive/52a25c431d8280166e005f5c82b5d34e)
 * [sample-report.json](https://gist.github.com/manifestinteractive/dbe2909776bd27a1242cc6afbc7d93d9)
 * [sample-report.md](https://gist.github.com/manifestinteractive/f2c87d567ff052acc766ce14387e915b)
 * [sample-report.xml](https://gist.github.com/manifestinteractive/bca0ee98f455e2cfe67a8d3f1f31b6ad)
