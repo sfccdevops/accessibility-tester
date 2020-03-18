@@ -1,6 +1,6 @@
 {
   "name": "rvw-accessibility-tester",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Automated Accessibility Tester for Client Websites",
   "homepage": "https://github.com/redvanworkshop/accessibility-tester#readme",
   "license": "MIT",
@@ -44,6 +44,7 @@
     "test": "eslint --ext .js ./ && echo '\n【ツ】CODE PERFECTION !!!\n'"
   },
   "dependencies": {
+    "archiver": "^3.1.1",
     "bluebird": "^3.7.2",
     "chalk": "^3.0.0",
     "handlebars": "^4.7.3",
@@ -55,7 +56,6 @@
     "yargs": "^15.3.1"
   },
   "devDependencies": {
-    "archiver": "^3.1.1",
     "babel-eslint": "^10.1.0",
     "eslint": "^6.8.0",
     "eslint-plugin-import": "^2.20.1"
