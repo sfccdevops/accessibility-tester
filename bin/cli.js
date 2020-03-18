@@ -24,6 +24,12 @@ const argv = yargs
       type: 'string',
       default: 'cli'
     },
+    compress: {
+      alias: 'C',
+      describe: 'Compress HTML Report',
+      type: 'boolean',
+      default: false
+    },
     ignore: {
       alias: 'i',
       describe: 'Error Codes to Ignore',

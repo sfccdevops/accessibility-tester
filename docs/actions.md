@@ -14,6 +14,7 @@ Example: `/path/to/config.json`
 ```json
 {
   "format": "html",
+  "compress": true,
   "notices": false,
   "warnings": false,
   "output": "/Users/rvw/Desktop/report-sample",
