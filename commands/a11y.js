@@ -113,7 +113,19 @@ module.exports = async options => {
           opts.ignore = test.ignore
         }
 
+        // Set actions if they are there, and do a quick check for common issues
         if (test.actions && Array.isArray(test.actions)) {
+          test.actions.forEach((action, index) => {
+            if (action.startsWith('screen capture ')) {
+              const parts = action.split(' ')
+
+              // Check if the file name has a path, if not, we need to set it
+              if (parts.length === 3 && parts[2].indexOf('/') === -1 && parts[2].indexOf('\\') === -1) {
+                test.actions[index] = `screen capture ${path.join(opts.output, parts[2])}`
+              }
+            }
+          })
+
           opts.actions = test.actions
         }
 
@@ -158,6 +170,47 @@ module.exports = async options => {
           }
         }
 
+        // Run in Browser
+        if (opts.runInBrowser) {
+          // Add Chrome Settings
+          opts.chromeLaunchConfig = {
+            headless: false
+          }
+        }
+
+        // Set Screenshot Viewport Size
+        if (opts.viewport && ['desktop', 'tablet', 'tablet-landscape', 'tablet-portrait', 'mobile'].indexOf(opts.viewport) !== -1) {
+          const sizes = {
+            'desktop': {
+              width: 1366,
+              height: 768,
+              isMobile: false
+            },
+            'tablet': {
+              width: 1024,
+              height: 768,
+              isMobile: true
+            },
+            'tablet-landscape': {
+              width: 1024,
+              height: 768,
+              isMobile: true
+            },
+            'tablet-portrait': {
+              width: 768,
+              height: 1024,
+              isMobile: true
+            },
+            'mobile': {
+              width: 360,
+              height: 640,
+              isMobile: true
+            }
+          }
+
+          opts.viewport = sizes[opts.viewport]
+        }
+
         if (opts.screenCapture) {
           const timestamp = moment().format('YYYYMMDD_HHmmssSSSS')
           opts.screenCapture = path.join(opts.output, `screenshot_${website.host}_${timestamp}.jpg`)
@@ -193,7 +246,8 @@ module.exports = async options => {
                 logger(() => { console.log(status.message) })
                 spinner.succeed(`${chalk.green.bold('Testing Complete')}\n`)
 
-                if (options.open) {
+                // Open report if requested, unless compressing ( not required )
+                if (options.open && !options.compress) {
                   open(status.file)
                 }
               } else if (testResults.settings.format === 'cli') {

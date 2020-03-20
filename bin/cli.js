@@ -83,6 +83,18 @@ const argv = yargs
       describe: 'Include Warnings in Report',
       type: 'boolean',
       default: true
+    },
+    runInBrowser: {
+      alias: 'b',
+      describe: 'Run Tests in Browser Window',
+      type: 'boolean',
+      default: false
+    },
+    viewport: {
+      alias: 'V',
+      describe: 'Viewport Screen Size',
+      type: 'string',
+      default: 'desktop'
     }
   })
   .command('*', 'Run A11Y Tests using Options')

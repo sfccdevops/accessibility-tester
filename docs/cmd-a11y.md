@@ -16,16 +16,18 @@ Options:
 Name           | JSON Param      | CLI Param & Alias        | Default   | Definition
 ---------------|-----------------|--------------------------|-----------|----------------------------------------------
 Actions        | `actions`       | `--actions`, `-a`        | `[]`      | Test Actions ( [Learn More](actions.md) )
+Compress       | `compress`      | `--compress`, `-C`       | `false`   | Compress Report ( Only works on HTML Format )
 Config         |                 | `--config`, `-c`         |           | Absolute Path to Configuration File
 Format         | `format`        | `--format`, `-f`         | `cli`     | Output Format of Report [ `cli`, `csv`, `html`, `jira`, `json`, `md`, `xml` ]
-Compress       | `compress`      | `--compress`, `-C`       | `false`   | Compress Report ( Only works on HTML Format )
 Ignore         | `ignore`        | `--ignore`, `-i`         |  `[]`     | Error Codes to Ignore ( `WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail` )
 Notices        | `notices`       | `--notices`, `-n`        | `true`    | Include Notices in Report ( `--notices=false` or `--no-notices` to disable )
-Open           | `open`          | `--open`, `-O`           | `false`   | Open Report after Creation
+Open           | `open`          | `--open`, `-O`           | `false`   | Open Report after Creation ( disabled if using `--compress` )
 Output         | `output`        | `--output`, `-o`         |           | Absolute Path to Output Directory for Report ( `cwd` if not provided )
+Run in Browser | `runInBrowser`  | `--run-in-browser`, `-b` | `false`   | Run Tests in Browser ( helpful for tests that require sessions / authentication )
 Screen Capture | `screenCapture` | `--screen-capture`, `-S` | `false`   | Whether to add a Screen Capture for Report
 Standard       | `standard`      | `--standard`, `-s`       | `WCAG2AA` | Accessibility Standard [ `Section508`, `WCAG2A`, `WCAG2AA`, `WCAG2AAA` ]
 Timeout        | `timeout`       | `--timeout`, `-t`        | `30000`   | Test Timeout in Milliseconds
+Viewport       | `viewport`      | `--viewport`, `-V`       | `desktop` | Viewport Screen Size [ `desktop`, `tablet-landscape`, `tablet-portrait`, `mobile` ]
 Wait           | `wait`          | `--wait`, `-W`           | `0`       | Page Load Wait in Milliseconds
 Warnings       | `warnings`      | `--warnings`, `-w`       | `true`    | Include Warnings in Report ( `--warnings=false` or `--no-warnings` to disable )
 
@@ -153,3 +155,14 @@ It's possible to overload settings in your `config` file by passing in CLI param
 rvw-a11y --config=/path/to/config.json --output=/path/to/other/folder
 rvw-a11y -c /path/to/config.json -o /path/to/other/folder
 ```
+
+
+Viewport Screen Sizes:
+---
+
+Size               | Width | Height
+-------------------|-------|---------
+`desktop`          | 1366  | 768
+`tablet-landscape` | 1024  | 768
+`tablet-portrait`  | 768   | 1024
+`mobile`           | 360   | 640
