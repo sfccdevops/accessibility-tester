@@ -5,7 +5,7 @@ Thank you for Contributing
 
 We want to make it as easy as possible to contribute changes.
 
-Follow the requirements below for __[Creating Issues](https://github.com/redvanworkshop/accessibility-tester/issues/new)__ and __[Pull Requests](https://github.com/redvanworkshop/accessibility-tester/pull/new)__, to keep everything simple for everyone :)
+Follow the requirements below for __[Creating Issues](https://github.com/sfccdevops/accessibility-tester/issues/new)__ and __[Pull Requests](https://github.com/sfccdevops/accessibility-tester/pull/new)__, to keep everything simple for everyone :)
 
 <img src="https://octodex.github.com/images/dinotocat.png" width="400" />
 

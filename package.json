@@ -1,12 +1,12 @@
 {
-  "name": "rvw-accessibility-tester",
+  "name": "sfcc-accessibility-tester",
   "version": "1.3.0",
   "description": "Automated Accessibility Tester for Client Websites",
-  "homepage": "https://github.com/redvanworkshop/accessibility-tester#readme",
+  "homepage": "https://github.com/sfccdevops/accessibility-tester#readme",
   "license": "MIT",
   "main": "./bin/cli.js",
   "bin": {
-    "rvw-a11y": "./bin/cli.js"
+    "sfcc-a11y": "./bin/cli.js"
   },
   "keywords": [
     "a11y",
@@ -29,16 +29,16 @@
   "contributors": [
     {
       "name": "Peter Schmalfeldt",
-      "email": "peter@redvanworkshop.com",
-      "url": "redvanworkshop.com"
+      "email": "me@peterschmalfeldt.com",
+      "url": "peterschmalfeldt.com"
     }
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/redvanworkshop/accessibility-tester.git"
+    "url": "git+https://github.com/sfccdevops/accessibility-tester.git"
   },
   "bugs": {
-    "url": "https://github.com/redvanworkshop/accessibility-tester/issues"
+    "url": "https://github.com/sfccdevops/accessibility-tester/issues"
   },
   "scripts": {
     "test": "eslint --ext .js ./ && echo '\n【ツ】CODE PERFECTION !!!\n'"

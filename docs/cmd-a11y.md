@@ -2,12 +2,12 @@
 
 **[↤ Developer Overview](../README.md#developer-overview)**
 
-`rvw-a11y`
+`sfcc-a11y`
 ---
 
 > Examples of how to use our CLI tool
 
-![markdown](https://rvw-a11y.s3.amazonaws.com/markdown.gif?v=1.0.0)
+![markdown](https://sfcc-a11y.s3.amazonaws.com/markdown.gif?v=1.0.0)
 
 
 Options:
@@ -38,48 +38,48 @@ Examples using CLI Params:
 Test a Website and Output Report to Terminal Window:
 
 ```bash
-rvw-a11y https://mywebsite.com
+sfcc-a11y https://mywebsite.com
 ```
 
 Test more than once website at a time:
 
 ```bash
-rvw-a11y https://mywebsite.com https://myotherwebsite.com
+sfcc-a11y https://mywebsite.com https://myotherwebsite.com
 ```
 
 Output Report with Screen Capture as Markdown and Open Report:
 
 ```bash
-rvw-a11y https://mywebsite.com --format=md --output=/path/to/folder --screen-capture --open
-rvw-a11y https://mywebsite.com -f md -o /path/to/folder -S -O
+sfcc-a11y https://mywebsite.com --format=md --output=/path/to/folder --screen-capture --open
+sfcc-a11y https://mywebsite.com -f md -o /path/to/folder -S -O
 ```
 
 Run report without Notices or Warnings:
 
 ```bash
-rvw-a11y https://mywebsite.com --no-notices --no-warnings
-rvw-a11y https://mywebsite.com -n false -w false
+sfcc-a11y https://mywebsite.com --no-notices --no-warnings
+sfcc-a11y https://mywebsite.com -n false -w false
 ```
 
 Wait for Report until 500 milliseconds has passed:
 
 ```bash
-rvw-a11y https://mywebsite.com --wait=500
-rvw-a11y https://mywebsite.com -W 500
+sfcc-a11y https://mywebsite.com --wait=500
+sfcc-a11y https://mywebsite.com -W 500
 ```
 
 Prevent Timeout Warning by extending timeout:
 
 ```bash
-rvw-a11y https://mywebsite.com --timeout=100000
-rvw-a11y https://mywebsite.com -t 100000
+sfcc-a11y https://mywebsite.com --timeout=100000
+sfcc-a11y https://mywebsite.com -t 100000
 ```
 
 Add Test Actions: ( [Learn More about Actions](actions.md) )
 
 ```bash
-rvw-a11y https://mywebsite.com --actions='set field #username to my@email.com' 'set field #password to abc123' 'click element #submit'
-rvw-a11y https://mywebsite.com -a 'set field #username to my@email.com' 'set field #password to abc123' 'click element #submit'
+sfcc-a11y https://mywebsite.com --actions='set field #username to my@email.com' 'set field #password to abc123' 'click element #submit'
+sfcc-a11y https://mywebsite.com -a 'set field #username to my@email.com' 'set field #password to abc123' 'click element #submit'
 ```
 
 
@@ -96,7 +96,7 @@ Example: `/path/to/config.json`
   "compress": true,
   "notices": false,
   "warnings": false,
-  "output": "/Users/rvw/Desktop/report-sample",
+  "output": "/Users/sfcc/Desktop/report-sample",
   "open": true,
   "screenCapture": true,
   "standard": "WCAG2AA",
@@ -143,8 +143,8 @@ If you want to set a config option on a specific test, or overwrite your default
 Once you have the config files saved, you can trigger the test via CLI like this:
 
 ```bash
-rvw-a11y --config=/path/to/config.json
-rvw-a11y -c /path/to/config.json
+sfcc-a11y --config=/path/to/config.json
+sfcc-a11y -c /path/to/config.json
 ```
 
 #### Overwriting Config Options via CLI
@@ -152,8 +152,8 @@ rvw-a11y -c /path/to/config.json
 It's possible to overload settings in your `config` file by passing in CLI params:
 
 ```bash
-rvw-a11y --config=/path/to/config.json --output=/path/to/other/folder
-rvw-a11y -c /path/to/config.json -o /path/to/other/folder
+sfcc-a11y --config=/path/to/config.json --output=/path/to/other/folder
+sfcc-a11y -c /path/to/config.json -o /path/to/other/folder
 ```
 
 

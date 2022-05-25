@@ -17,7 +17,7 @@ Example: `/path/to/config.json`
   "compress": true,
   "notices": false,
   "warnings": false,
-  "output": "/Users/rvw/Desktop/report-sample",
+  "output": "/Users/sfcc/Desktop/report-sample",
   "open": true,
   "screenCapture": true,
   "timeout": 100000,
@@ -46,11 +46,11 @@ Example: `/path/to/config.json`
 }
 ```
 
-Here's another example using CLI `action` paramater:
+Here's another example using CLI `action` parameter:
 
 ```bash
-rvw-a11y https://mywebsite.com --actions='set field #username to my@email.com' 'set field #password to abc123' 'click element #submit'
-rvw-a11y https://mywebsite.com -a 'set field #username to my@email.com' 'set field #password to abc123' 'click element #submit'
+sfcc-a11y https://mywebsite.com --actions='set field #username to my@email.com' 'set field #password to abc123' 'click element #submit'
+sfcc-a11y https://mywebsite.com -a 'set field #username to my@email.com' 'set field #password to abc123' 'click element #submit'
 ```
 
 Below is a reference of all the available actions and what they do on the page. Some of these take time to complete so you may need to increase the `timeout` option if you have a large set of actions.

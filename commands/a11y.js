@@ -55,8 +55,8 @@ const runTest = test => {
 const testResults = {
   generated: {
     date: moment().format('LLLL'),
-    label: 'Red Van Workshop - Accessibility Tester',
-    url: 'https://github.com/redvanworkshop/accessibility-tester'
+    label: 'SFCC DevOps - Accessibility Tester',
+    url: 'https://github.com/sfccdevops/accessibility-tester'
   },
   settings: {},
   total: {

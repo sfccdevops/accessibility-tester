@@ -4,7 +4,7 @@ const path = require('path')
 const yargs = require('yargs')
 
 const argv = yargs
-  .usage('\nAutomated Accessibility Tester\n\nUsage: rvw-a11y --options')
+  .usage('\nAutomated Accessibility Tester\n\nUsage: sfcc-a11y --options')
   .options({
     actions: {
       alias: 'a',
@@ -103,7 +103,7 @@ const argv = yargs
   .example('a11y https://mywebsite.com --open', 'Run Test on URL')
   .example(' ', ' ')
   .example('----------------------------------', '------------------------------------------')
-  .example('NEED MORE HELP ?', 'https://bit.ly/rvw-a11y-help')
+  .example('NEED MORE HELP ?', 'https://bit.ly/sfcc-a11y-help')
   .example('----------------------------------', '------------------------------------------')
   .help()
   .version().argv
