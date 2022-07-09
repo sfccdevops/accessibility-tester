@@ -7,7 +7,7 @@
 
 > Generate Basic HTTP Authentication Tokens
 
-![demo](https://sfcc-a11y.s3.amazonaws.com/auth.gif?v=1.0.0)
+![demo](https://sfcc-a11y.s3.amazonaws.com/auth.gif?v=1.3.0)
 
 Some websites are protected from viewing by Basic HTTP Authentication. In order to run accessibility tests on these protected websites, you will need to configure tests with authentication data.
 

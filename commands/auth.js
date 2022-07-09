@@ -31,7 +31,7 @@ module.exports = () => {
 
   prompt.get(schema).then(result => {
     const credentials = `${result.username}:${result.password}`
-    const token = new Buffer(credentials).toString('base64')
+    const token = new Buffer.from(credentials).toString('base64')
 
     console.log(`${chalk.bold.green('⚑')} ${chalk.bold('Token Generated:')} ${chalk.cyan(token)}\n`)
     console.log(`Sample Usage: ${chalk.dim.grey('/path/to/my/config.json')}\n`)
@@ -51,7 +51,7 @@ module.exports = () => {
       }, null, 2)
     )
 
-    console.log('\n')
+    console.log('')
   })
   .catch(() => {
     console.log(`\n\n${chalk.red('✖ Cancelled')}\n`)

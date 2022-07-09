@@ -4,6 +4,7 @@ const path = require('path')
 const yargs = require('yargs')
 
 const argv = yargs
+  .scriptName('sfcc-a11y')
   .usage('\nAutomated Accessibility Tester\n\nUsage: sfcc-a11y --options')
   .options({
     actions: {

@@ -1,12 +1,19 @@
 {
-  "name": "sfcc-accessibility-tester",
+  "name": "@sfccdevops/sfcc-a11y",
   "version": "1.3.0",
   "description": "Automated Accessibility Tester for Client Websites",
   "homepage": "https://github.com/sfccdevops/accessibility-tester#readme",
   "license": "MIT",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "main": "./bin/cli.js",
   "bin": {
     "sfcc-a11y": "./bin/cli.js"
+  },
+  "engines": {
+    "node": ">=14.17.3",
+    "npm": ">= 6.14.13"
   },
   "keywords": [
     "a11y",
@@ -30,7 +37,7 @@
     {
       "name": "Peter Schmalfeldt",
       "email": "me@peterschmalfeldt.com",
-      "url": "peterschmalfeldt.com"
+      "url": "https://peterschmalfeldt.com"
     }
   ],
   "repository": {
@@ -44,20 +51,20 @@
     "test": "eslint --ext .js ./ && echo '\n【ツ】CODE PERFECTION !!!\n'"
   },
   "dependencies": {
-    "archiver": "^3.1.1",
+    "archiver": "^5.3.1",
     "bluebird": "^3.7.2",
-    "chalk": "^3.0.0",
-    "handlebars": "^4.7.3",
-    "moment": "^2.24.0",
-    "open": "^7.0.3",
-    "ora": "^4.0.3",
-    "pa11y": "^5.3.0",
-    "prompt": "^1.0.0",
-    "yargs": "^15.3.1"
+    "chalk": "^4.1.2",
+    "handlebars": "^4.7.7",
+    "moment": "^2.29.4",
+    "open": "^8.4.0",
+    "ora": "^5.4.1",
+    "pa11y": "^6.2.3",
+    "prompt": "^1.3.0",
+    "yargs": "^17.5.1"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
-    "eslint": "^6.8.0",
-    "eslint-plugin-import": "^2.20.1"
+    "eslint": "^8.19.0",
+    "eslint-plugin-import": "^2.26.0"
   }
 }

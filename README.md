@@ -5,7 +5,7 @@ Accessibility Tester
 
 > Command Line Interface for Automated Accessibility Testing Salesforce Commerce Cloud Websites
 
-![markdown](https://sfcc-a11y.s3.amazonaws.com/markdown.gif?v=1.0.0)
+![markdown](https://sfcc-a11y.s3.amazonaws.com/markdown.gif?v=1.3.0)
 
 Introduction
 ---
@@ -18,33 +18,31 @@ A CLI tool that tests client websites for Accessibility Issues and generates rep
 - [X] Supports Testing Websites behind HTTP Authentication
 - [X] Reports provide Resource Links for Developers to Learn More about Accessibility
 
-
 Developer Overview
 ---
 
 #### Commands
 
-* [`sfcc-a11y`](docs/cmd-a11y.md) - Detailed Examples of `sfcc-ally` Usage
-* [`sfcc-a11y auth`](docs/cmd-auth.md) - Generate HTTP Authentication Tokens
-* [`sfcc-a11y help`](docs/cmd-help.md) - Get Help when you need it
+* [`sfcc-a11y`](https://github.com/sfccdevops/accessibility-tester/blob/master/docs/cmd-a11y.md) - Detailed Examples of `sfcc-ally` Usage
+* [`sfcc-a11y auth`](https://github.com/sfccdevops/accessibility-tester/blob/master/docs/cmd-auth.md) - Generate HTTP Authentication Tokens
+* [`sfcc-a11y help`](https://github.com/sfccdevops/accessibility-tester/blob/master/docs/cmd-help.md) - Get Help when you need it
 
 #### Additional Information
 
-* [Automate with Actions](docs/actions.md) - Submit Forms, Click Links & Other Fun Things
-* [Troubleshooting](docs/troubleshooting.md) - Some of the Known Issues & how to resolve them
-
+* [Automate with Actions](https://github.com/sfccdevops/accessibility-tester/blob/master/docs/actions.md) - Submit Forms, Click Links & Other Fun Things
+* [Troubleshooting](https://github.com/sfccdevops/accessibility-tester/blob/master/docs/troubleshooting.md) - Some of the Known Issues & how to resolve them
 
 Install
 ---
 
 #### Requirements
 
-- [X] [Node v10+](https://nodejs.org/en/download/)
+- [X] [Node v14+](https://nodejs.org/en/download/)
 
 #### `npm install`
 
 ```bash
-npm install -g sfcc-accessibility-tester
+npm install -g @sfccdevops/sfcc-a11y
 sfcc-a11y help
 ```
 
@@ -61,7 +59,7 @@ sfcc-a11y help
 Report Samples
 ---
 
-We worked extensively to make the most helpful reports possible.  Whether you are running a test on a single site, or needing to batch multiple tests into a single report, we wanted to make our reports as developer friendly as possible.
+Whether you are running a test on a single site, or needing to batch multiple tests into a single report, we wanted to make our reports as developer friendly as possible.
 
 Since this is a CLI tool, the default output is in a terminal window.
 
@@ -77,6 +75,11 @@ Since this is a CLI tool, the default output is in a terminal window.
 * [sample-report.xml](https://gist.github.com/manifestinteractive/bca0ee98f455e2cfe67a8d3f1f31b6ad)
 
 _Built using [pa11y](https://github.com/pa11y/pa11y). Customized for Salesforce Commerce Cloud Developers & Clients._
+
+About the Author
+---
+
+> [Peter Schmalfeldt](https://peterschmalfeldt.com/) is a Certified Senior Salesforce Commerce Cloud Developer with over 20 years of experience building eCommerce websites, providing everything you need to design, develop & deploy eCommerce applications for Web, Mobile & Desktop platforms.
 
 Disclaimer
 ---

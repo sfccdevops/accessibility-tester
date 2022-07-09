@@ -1,4 +1,6 @@
+!.nvmrc
+!accessibility-tester.code-workspace
 .DS_Store
+.vscode
 node_modules
 npm-debug.log
-.vscode
