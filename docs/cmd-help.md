@@ -7,7 +7,7 @@
 
 > Get Help when you need it
 
-![demo](https://sfcc-a11y.s3.amazonaws.com/help.gif?v=1.3.0)
+![demo](https://sfcc-a11y.s3.amazonaws.com/help.gif?v=1.3.1)
 
 You can get help at any time by running:
 

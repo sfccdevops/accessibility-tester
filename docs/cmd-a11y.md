@@ -7,7 +7,7 @@
 
 > Examples of how to use our CLI tool
 
-![markdown](https://sfcc-a11y.s3.amazonaws.com/markdown.gif?v=1.3.0)
+![markdown](https://sfcc-a11y.s3.amazonaws.com/markdown.gif?v=1.3.1)
 
 
 Options:

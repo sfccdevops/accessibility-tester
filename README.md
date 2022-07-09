@@ -5,7 +5,7 @@ Accessibility Tester
 
 > Command Line Interface for Automated Accessibility Testing Salesforce Commerce Cloud Websites
 
-![markdown](https://sfcc-a11y.s3.amazonaws.com/markdown.gif?v=1.3.0)
+![markdown](https://sfcc-a11y.s3.amazonaws.com/markdown.gif?v=1.3.1)
 
 Introduction
 ---
